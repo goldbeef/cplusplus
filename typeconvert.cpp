@@ -20,10 +20,11 @@ public:
 class Child : public Base 
 {
 public:
+    /*
     virtual void display()
     {
 
-    }
+    }*/
 };
 
 int main()
