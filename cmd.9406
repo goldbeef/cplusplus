@@ -1,0 +1,1523 @@
+----------------------------------------------
+#include <climits>
+using namespace std;
+
+#include <limit.h>
+
+sizeof(int)
+INT_MAX
+
+cout << hex << intVal;
+cout << oct << intVal;
+cout << dec << intVal;
+
+
+l L
+u U
+ll LL 
+ul UL 
+ull ULL 
+
+1024ULL
+----------------------------------------------
+wcha_t
+wcout
+
+char16_t
+char32_t
+----------------------------------------------
+bool
+
+int val = 1024;
+int val(1024);
+int val = {1024};
+
+const int val = 1024
+const int val; //error
+----------------------------------------------
+float
+double
+long double
+
+12.34
+12e34
+
+#include <cfloat>
+using namespace std;
+
+#include <float.h>
+
+DBL_DIG 
+DBL_MANT_DIG
+DBL_MAX_10_EXP
+DBL_MIN_10_EXP
+----------------------------------------------
+type convert
+    assign
+        name = val;
+        name = {}
+    math-exp
+        2.1 + 1
+    param transmit
+        funcName(1.2);
+    force convert
+        int (name);
+        (int) name;
+        static_cast<int> name;
+auto 
+    auto name = 1.5
+    -std=c++0x
+----------------------------------------------
+int array[10];
+int len = sizeof(array)/sizeof(int);
+
+int array[10] = {1, 2, 3};
+int array[] = {1, 2, 4};
+cout << sizeof(array) / sizeof(int);
+
+c++11
+int array[3] {1, 2, 3};
+int array[3] {};
+int array[3] = {};
+
+----------------------------------------------
+char ch;
+ch = 's'; //ok
+ch = "s"; //error
+
+char array[] = "hello";
+char array1[1024] = "hello";
+cout << "strlen(array1) = " << strlen(array1) << endl;
+cout << "sizeof(array1) = " << sizeof(array1) / sizeof(char) << endl;
+
+----------------------------------------------
+cout << "hello" 
+     << " world"
+     << endl;
+
+cout << "hello" 
+     " world"
+     << endl;
+----------------------------------------------
+getline
+    istream.getline(buff1, sizeof(buff1));
+    istream.getline(buff1, sizeof(buff1));
+get 
+    istream.get(buff1, sizeof(buff1)).get();
+    istream.get(buff2, sizeof(buff2)).get();
+----------------------------------------------
+char array[] = "hello world";
+string str = "hello world";
+
+//c++11
+char array[] {"hello world"};
+string str {"hello world"};
+
+string 
+    =
+    +
+    +=
+    string + c-string
+    string.size()
+----------------------------------------------
+struct StTest
+{
+    int member1;
+    int member2;
+    char array[20];
+};
+
+assign
+    st1 = st2
+
+StTest st = {0, 0, ""};
+
+//c++11
+StTest st {0, 0, ""};
+StTest st { };
+----------------------------------------------
+union UnionTest
+{
+    char chTypp;
+    int intType;
+    char array[256];
+};
+
+cout << sizeof(UnionTest);
+
+----------------------------------------------
+enum EnumTest
+{
+    hello = 1,
+    world = 2
+};
+
+int val = hello;
+EnumTest em = EnumTest(2);
+----------------------------------------------
+pointer
+    int val;
+    cout <<&val << endl;
+
+new/delete
+    int *ptr = new int;
+    delete ptr;
+
+    ptr = new int [10];
+    delete[] ptr;
+pointer exp
+    int array[10];
+
+    int *ptr = array;
+    int *ptr = &array[0];
+    cout << sizeof(ptr) << ", " << sizeof(array) << endl;
+
+    int (*arrayPtr) [10] = &array; 
+----------------------------------------------
+c++ memory store
+    auto store
+        local variable;
+    static store
+        global variable;
+        static variable;
+    dynamic store
+        new/delete;
+            heap
+----------------------------------------------
+c++ stl
+    vector<int> intVec;
+    intVec[-2]= 9;
+    intVec.at(-2) = 9;
+
+    array<int, 4> arrayVec; //c++0x 
+    arrayVec.at(-2) = 9;
+----------------------------------------------
+++*ptr => ++(*ptr) 
+*++ptr => *(++ptr)
+
+*ptr++ => *(ptr++)
+(*ptr)++ 
+
+----------------------------------------------
+int i, j, k;
+i = 20, j = i * 3;a //left to right
+
+i = j = k; //right to left
+----------------------------------------------
+string str1, str2;
+if (str1 == str2)
+{
+    //ok
+}
+
+char cstr1[10];
+char cstr2[10];
+if (cstr1 == cstr2)
+{
+    //wrong
+}
+strcmp(cstr1, cstr2);
+
+----------------------------------------------
+for (init; test-exp; update-exp)
+{
+    //body 
+}
+
+init
+while(test-exp)
+{
+    //body 
+    update-exp
+}
+
+do 
+{
+    //body;
+}
+while(test-exp);
+
+
+do
+{
+    //body;
+}while(0);
+
+
+//c++0x, -std=c++0x
+int array[10];
+int val;
+for( val : array)
+{
+    cout << val << endl;
+}
+----------------------------------------------
+#define char byte
+typedef char byte 
+byte ch1, ch2;
+
+
+#define char* PTR_BYTE
+PTR_BYTE ptr1, ptr2; //error 
+
+typedef char* PTR_BYTE;
+PTR_BYTE ptr1, ptr2; //succ
+----------------------------------------------
+
+char ch = cin.get();
+cin.get(ch);
+
+while(cin.fail() == false)
+{
+    //do 
+}
+
+while(!cin.fail())
+{
+    //do
+}
+
+while(cin)
+{
+    //do
+}
+
+----------------------------------------------
+int array[2][3] = {
+    {
+        1, 2
+    },
+    {
+        3, 4
+    }
+};
+
+----------------------------------------------
+if (cond1)
+{
+
+}
+else if (cond2)
+{
+
+}
+else
+{
+
+}
+
+4 == val 
+---------------------------------------------- 
+|| 
+&&
+!
+----------------------------------------------
+#include <cctype>
+//char function, digit
+
+----------------------------------------------
+exp1 ? exp2 : exp3;
+
+if (exp1)
+    exp2;
+else
+    exp3;
+----------------------------------------------
+switch (int-exp)
+{
+    lable1: statment1;
+    lable2: statment2;
+    default: defaultStatement;
+
+}
+----------------------------------------------
+ios_base
+    |--ios
+        |--istream------|-------------|
+        |--ostream------|------------------------------|
+                       iostream       |                | 
+                        |           ifstream          ofstream
+                       fstream
+----------------------------------------------
+int array[10];
+int func(int array[], int len);
+int func(int* array, int len);
+
+int func(const int array[], int len);
+int func(const int* array, int len);
+
+array period
+(begPos, len)
+(begPos, endPos)
+----------------------------------------------
+ const int *ptr;
+ int * const ptr;
+ const int * const ptr;
+ ----------------------------------------------
+
+ int  dim2Array[3][4];
+
+int sum(int ar2[][4], int size);
+int sum(int (*ar2)[4], int size);
+
+ar2[i][j] 
+*(*(ar2 + i) + j)
+----------------------------------------------
+
+c-string 
+    int func(char* cString);
+    int func(char cString[]);
+
+    char* func()
+    {
+        char *ptr;
+        return ptr;
+    }
+    
+----------------------------------------------
+
+struct Data
+{
+    int hour;
+    int mimin;
+};
+
+
+int dispaly(Data data);
+int opt(Data *data);
+
+int dispaly(Data* dataPtr);
+int dispaly(Data dataPtr[]);
+----------------------------------------------
+
+double pam(int);
+
+double (*funcPtr) (int);
+funcPtr = pam;
+funcPtr = &pam;
+
+funcPtr(4);
+(*funcPtr)(5);
+
+typedef (*FuncPtr) (int);
+FuncPtr funcPtr = pam;
+FuncPtr funcPtr = &pam;
+----------------------------------------------
+int array[4];
+int * ptr1 = array; // &array[0]
+int (*ptr2)[4] = &array;
+
+cout << hex << ptr1 << "\t" << ptr1 + 1 << endl;
+cout << hex << ptr2 << "\t" << ptr2 + 1 << endl;
+----------------------------------------------
+
+inline int square(int);
+int square(int);
+
+goldbeef@goldbeef:~/c++$ strings withInline |grep square
+_Z6squared
+goldbeef@goldbeef:~/c++$ strings noInline |grep square
+_GLOBAL__sub_I__Z6squared
+_Z6squared
+----------------------------------------------
+
+int val;
+int & ref = val;
+//int & ref = val + 1; //error
+int * const ptrRef = &val;
+
+const int & constRef = val;
+//const int & constRef = val + 1; //error
+const int * constPtrRef = &val;
+
+cout << val << "\t" << ref << endl;
+cout << &val << "\t" << &ref << endl;
+
+ref = 1; // val = 1
+
+void swap(int &, int &);
+void show(const int &, const int &);
+
+int & dispaly(int & ref);
+const int & dispaly(int & ref);
+
+-std=c++0x
+right reference
+    int && rightRef = 1;
+----------------------------------------------
+
+default param 
+    int func(int param1, int param2 = 2, int param3 = 3);
+
+    int func(int param1, int param2, int param3)
+    {
+        return 0;
+    }
+
+    ret = func(1);
+    ret = func(1, 2);
+    ret = func(1, 2, 3);
+----------------------------------------------
+function overload
+    param type
+    param num 
+    param ref  (int &)
+    param const ref (const int &) 
+    param rightRef  (int && ref)
+    param const rightRef  (const int && constRef)
+----------------------------------------------
+
+function template
+    template <typename T> // template <classname T>
+    void func(T val);
+
+    template <typename T>
+    void func(T val)
+    {
+        T tmpVal = val;
+    }
+
+    int val;
+    func(val);
+----------------------------------------------
+reload template
+    template <typename T>
+    void swap(T &a, T &b);
+
+    template <teypename T>
+    void swap(T &a, T &b, int len);
+
+
+    int val1, val2;
+    swap(val1, val2);
+
+    int array1[10], array2[10];
+    swap(array1, array2, 10);
+---------------------------------------------- 
+//comm template
+template <typename T>
+void mySwap(T &left, T &right)
+{
+    cout << "comm template, begin" << endl; 
+    T tmp;
+    tmp = left;
+    left = right;
+    right = tmp;
+    cout << "comm template, end" << endl; 
+}
+
+mySwap(intVal1, intVal2);
+
+//explicit specialization
+template <> 
+//void mySwap (Job& left, Job& right)
+void mySwap<Job> (Job& left, Job& right)
+{
+    cout << "explicit specialization, begin" << endl; 
+    Job tmp;
+    tmp = left;
+    left.mem1 = right.mem1;
+    right.mem1 = tmp.mem1;
+    cout << "explicit specialization, end" << endl; 
+}
+
+mySwap(jobVal1, jobVal2);
+
+//explicit instance
+template 
+void mySwap<short>(short& left, short& right);
+
+mySwap(shortVal1, shortVal2);
+
+short shortVal1, shortVal2;
+mySwap<short>(shortVal1, shortVal2);
+---------------------------------------------- 
+
+compile overloading resolution (func-overload, func-template, fun-template-overload)
+    1) candadiate func-list;
+    2) func-list compatible
+    3) select the best compatible func 
+            full-match
+            best-match
+        rule: non-template < template < more-specialize template
+------------------------------
+//template A
+template <typename T>
+void show(T array[], int len);
+
+//template B
+template <typename T>
+void show(T* array[], int len);
+
+int array[3];
+int* ptrArray[3];
+
+int* ptr = array;
+int** pptr = ptrArray;
+
+show(ptr); // use template A
+show(pptr); // use template B
+------------------------------
+----------------------------------------------
+user-defined overload select:
+
+template <typename T>
+T less(T a, T b)
+{
+    return (a < b) ? a : b;
+}
+
+int less(int a, int b)
+{
+    return (a < b) ? a : b;
+}
+
+int intA, intB;
+double doubleA, doubleB;
+
+less(intA, intB);
+less<>(intA, intB);
+
+less(doubleA, doubleB);
+less<int>(doubleA, doubleB)
+----------------------------------------------
+
+c++98
+    template <typename T1, typename T2>
+    void add(T1 val1, T2 val2)
+    {
+        ?type? sum = val1 + val2;
+    }
+
+c++11
+    //decltype
+    template <typename T1, typename T2>
+    void add(T1 val1, T2 val2)
+    {
+        decltype(val1 + val2) sum = val1 + val2;
+    }
+
+c++11 
+    //back-end return type
+    template <typename T1, typename T2>
+    auto add(T1 val1, T2 val2) -> decltype(val1 + val2)
+    {
+        decltype(val1 + val2) sum = val1 + val2;
+        return sum;
+    }
+
+    int a,b;
+    double c,d;
+
+    add(a, b);
+    add(c, d);
+    add(a, c);
+----------------------------------------------
+
+single compile 
+    class.h
+        func proto
+        define/const 
+        struct declare 
+        class declare 
+        inline function 
+        template declare
+    class.cpp
+
+    main.cpp 
+----------------------------------------------
+store type
+    auto-store
+        auto, regist
+        local-vairable
+        func-param
+    static-store
+        global-variable
+        file-static
+        block-static
+    thread-store
+        thread_local (c++11)
+    dynamic-store
+        new/delete
+        malloc/free
+
+scope
+    local-scope
+        block-variable
+        func-param
+        block-static
+    global-scope
+        global-variable
+        global-static
+    class-scope
+    namespace-scope
+
+link 
+    global-variable
+    global-static 
+----------------------------------------------
+//file1
+int val1 = 12;
+extern int var2 = 45;
+
+//file2
+extern int val1;
+int val2 = 23;
+
+//file3
+extern val2;
+static val1;
+----------------------------------------------
+
+storage class specifier
+    auto (c++11 with other meaning)
+    register
+    static 
+    extern 
+    thread_local
+    mutable
+cv-qualifier
+    volatile
+    const 
+----------------------------------------------
+-------------
+//fille1
+const int variable = 2; //inner link
+
+//fille2
+const int variable = 4; //inner link
+-------------
+
+//file1 
+extern const int variable = 5;
+
+//file2 
+extern const int variable;
+----------------------------------------------
+func-link
+    int add(int, int);
+    int add(int a, int b)
+    {
+        return a + b;
+    }
+
+    static int add(int a, int b);
+    static int add(int a, int b);
+    {
+        return a + b;
+    }
+
+language-link
+    extern "C" void add(int a, int b);
+    extern "C++" void add(int a, int b);
+
+----------------------------------------------
+
+c++98
+    int* ptr = new int(10)
+    delete ptr;
+
+    int* arrayPtr = new int[10];
+    delete [] arrayPtr;
+c++11
+    int* ptr = new int {1};
+-------------
+allocation func:
+    void* operator new(size_t);
+        new int;
+        new (sizeof(int));
+    void* operator new[](size_t);
+        new int[10];
+        new (10*sizeof(int));
+deallocation func 
+    void* operator delete(size_t);
+    void* operator delete[](size_t)
+------------------------------
+fix-addr-new
+    char buff[1024];
+    int *intPtr = new (buff) int;
+        =>
+            new(sizeof(int), buff);
+    int *arrayPtr = new (buff) int[10];
+        =>
+            new(10*sizeof(int), buff);
+
+    //delete intPtr; //error
+    //delete arrayPtr; //error 
+----------------------------------------------
+
+namespace TEST1
+{
+    int int_test1;
+    int int_test2;
+}
+
+/*
+//error 
+using TEST1::int_test1;
+int int_test1;
+*/
+
+/*
+using namespace TEST1;
+int int_test1;
+*/
+
+-------------
+1) multi-layer namespace
+    namespace LAYER1
+    {
+        namespace LAYER2
+        {
+            int int_test1;
+            int int_test2;
+        }
+    }
+
+    using LAYER1::LAYER2;
+    using LAYER1::LAYER2::int_test1;
+2) 
+    namespace LAYER3
+    {
+        using namespace LAYER1;
+        int int_test3;
+    }
+3) 
+    namespace aliasNamespace = LAYER3;
+4) 
+    namespace
+    {
+        int val; //static storage, internal linkage
+    }
+5)
+    //file.h
+    namespace TEST1
+    {
+        class CTest
+        {
+            public:
+                show();
+        }
+    }
+
+    //file.cpp
+    #include "file.h"
+    namespace TEST1
+    {
+        void CTest::show()
+        {
+            //...
+        }
+    }
+
+----------------------------------------------
+inline-memeber-func
+    in c++ header file 
+    -------------
+    class CTtest
+    {
+        public:
+            int inlineShow1()
+            {
+                return m_val1;
+            }
+            
+            int inlineShow2();
+        protected:
+
+        private:
+            int m_val1;
+    };
+
+
+    int CTest::inlineShow2()
+    {
+        return m_val1;
+    }
+----------------------------------------------
+class-constuctor
+    -------------
+    class CTest
+    {
+        public:
+            CTest(int val1 = 0, int val2 = 0);
+        private:
+            int m_val1;
+            int m_val2;
+    }
+
+    CTest::CTest(int val1, int val2)
+    {
+        m_val1 = val1;
+        m_val2 = val2;
+    }
+    -------------
+
+    CTest test = CTest(1, 2);
+    CTest test1(1, 2);
+    CTest * ptr = new CTest(1, 2);
+
+    ------------------------------
+    deault constructor:
+        CTest();
+        CTest(int val1 = 0, int val2 = 0);
+        
+        -------------
+        CTest test;
+        CTest test = CTest();
+        CTest* ptr = new CTest;
+        CTest* ptr1 = new CTest();
+
+        //c++11
+        CTest test3 = {1, 2};
+        CTest test3 {1, 2};
+
+----------------------------------------------       
+class-destructor
+    -------------
+    class CTest
+    {
+        public:
+            ~CTest();
+        private:
+    }
+
+    CTest::~CTest()
+    {
+
+    }
+    -------------
+    when class timeout, call destructor
+        static class 
+        local class 
+        temp class 
+        new/delete class 
+    ------------
+    CTest test = CTest();// not create temp obj (compile depend)
+    test = CTest(); // must create temp obj
+    ----------------------------------------------
+----------------------------------------------
+const-memeber-func
+    
+    class CTest
+    {
+        public:
+            void constShow() const;
+            void normalShow();
+        private:
+    }
+    
+    void CTest::constShow() const
+    {
+
+    }
+    
+    void CTest::normalShow() 
+    {
+
+    }
+    -------------
+    CTest test1;
+    test1.constShow();
+    test1.normalShow();
+    
+    const CTest test2;
+    test2.constShow();
+    //test2.normalShow();//error
+----------------------------------------------
+------------
+this
+*this
+----------------------------------------------
+class-scope constant
+    enum 
+        class CTest
+        {
+            enum 
+            {
+                Months = 12;
+            };
+
+            double costs[Months];
+        }
+    static 
+        class CTest
+        {
+            static int Months = 12;
+
+            double costs[Months];
+        }
+----------------------------------------------
+scope-enum
+    //traditional
+    enum Enum1
+    {
+        MONTH
+    };
+
+    enum Enum2
+    {
+        MONTH
+    }
+
+    int val = MONTH; //ok
+    -------------
+    //c++11
+    enum class Enum1 
+    {
+        MONTH
+    };
+    
+    enum class Enum2 
+    {
+        MONTH
+    };
+
+    //int val = Enum1::MONTH; //error
+    int vla = (int)Enum1::MONTH;
+
+    -------------
+    c++11
+    //specify the low implement 
+    enum class : short  Enum3 
+    {
+        MONTH
+    };
+----------------------------------------------
+operator overload
+    class CTest
+    {
+        public:
+            CTest operator+(const CTest& right);
+    };
+
+    CTest CTest::operator+(const CTest& right)
+    {
+        CTest tmp;
+        return tmp;
+    }
+    ------------------------------
+    
+    CTest test1, test2, test3;
+    
+    test1.operator+(test2);
+    test1 + test2;
+    ------------------------------
+    rule
+       at least one usr-define type
+       not break original language rule 
+       not create new operator 
+       some only member; other member/non-member
+----------------------------------------------
+friend 
+    global-function
+    class 
+    class-function
+    ------------------------------
+
+    class CTest
+    {
+        public:
+            enum BookKind
+            {
+                HISTORY,
+                LITERATURE,
+            };
+
+            CTest operator+(const CTest& right);
+            friend CTest operator+(int intVal); 
+            friend ostream& operator<<(ostream& os, CTest& t);
+        private:
+            int m_val;
+    }; 
+    
+    CTest CTest::operator+(const CTest& right) {
+        CTest tmp;
+        return tmp;
+    }
+
+    friend CTest operator+(int intVal)
+    {
+        CTest tmp;
+        return tmp;
+    }
+    
+    ostream& operator<<(ostream& os, CTest& t)
+    {
+        os << t.m_val;
+        return os;
+    }
+    
+    int val = CTest::HISTORY;
+    ------------------------------
+----------------------------------------------
+type-class convert
+    ------------------------------
+    class CTest
+    {
+    public:
+        CTest();
+        CTest(double val);
+        explicit CTest(int val);
+    private:
+        double m_val;
+    };
+
+    CTest test0(1.1);
+    CTest test1 = CTest(1.2);
+    
+    test0 = 1.3;
+    
+    test0 = 1;
+    test0 = (CTest)1;
+    ------------------------------
+class-type convert
+    ------------------------------
+    class CTest
+    {
+    public:
+        CTest();
+        CTest(double val);
+        explicit CTest(int val);
+        operator double() const;
+        
+        //c++11
+        explicit operator int() const;
+    private:
+        double m_val;
+    };
+    
+    CTest test0(1.1);
+    double val = test0;
+    int intVal = (int)test0;
+    ------------------------------
+----------------------------------------------
+special-member-function
+    default-constructor
+    default-destructor
+    default-copy-constructor
+    default-assign-function
+    default-addr-function
+    ------------------------------
+    default-constructor
+        CTest::CTest() 
+        {
+
+        }
+        
+        CTest::CTest(int param1 = 0, int param2 = 0) 
+        {
+            
+        }
+    ------------------------------
+    default-copy-constructor
+        CTest::CTest(const CTest& ctest) { } 
+        ------------- 
+        triger 
+            CTest test1; 
+            CTest test2 = test1;
+            CTest test2(test1);
+            CTest test2 = CTest(test1);
+            CTest *  ptrTest = new CTest(test1);
+        -------------
+        shallow-copy
+        ------------
+        deep-copy
+            CTest::CTest(const CTest& ctest) 
+            {
+                //new memory 
+            } 
+        ------------
+    ----------------------------------------------
+    default-assign-function
+        shallow-copy
+        ------------
+        CTest& operator=(const CTest& st)
+        {
+            if(this == &st)
+            {
+                return *this;
+            }
+
+            //free original memory
+
+            //deep-copy
+
+            return *this;
+        }
+    ----------------------------------------------
+    new/delete NULL
+    ----------------------------------------------
+    nullptr //c++11
+----------------------------------------------
+return obj 
+    Ctest& funcName(CTest &tmp);
+    const Ctest& funcName(CTest &tmp);
+
+    Ctest funcName(CTest &tmp);
+    const Ctest funcName(CTest &tmp);
+----------------------------------------------
+destructor-call-time
+    auto variable 
+    static variable
+    new variable
+----------------------------------------------
+new place operator
+    
+    class CTest1
+    {
+        public:
+            CTest1(int val = 0);
+            ~CTest1();
+        private:
+            int m_val;
+    };
+
+    CTest1::CTest1(int val)
+    {
+        m_val = val;
+        cout << "constructor: " << m_val << endl;
+    }
+
+    CTest1::~CTest1()
+    {
+        cout << "destructor: " << m_val << endl;
+    }
+    ----------------------------------------------
+    char* buff = new char[1014];
+    cout << "buff addr: " << hex << (unsigned) buff << endl;
+
+    CTest1* ptr1 = new (buff) CTest1(5);
+    cout << "ptr1 addr: " << hex << (unsigned) ptr1 << endl;
+    ptr1->~CTest1();
+
+    delete buff;
+----------------------------------------------
+initializer liist
+    CTest::CTest(int val1, int val2): m_val1(val1), m_val2(val2) 
+    {
+        
+    }
+
+    //c++98, used for reference-variable  
+    //or no-static-const-variable
+----------------------------------------------
+in-class init 
+    //c++11
+    class CTest
+    {
+        int val1 = 10;
+        int val2 = 5;
+    }
+----------------------------------------------
+class inherit
+    class Child : public Base 
+    {
+        public:
+            Child(int param1, int param2);
+            Child(int param1, Base& base);
+
+            virtual ~Child();
+        
+        private:
+            int m_val;
+    };
+    
+    Child::Child(int param1, int param2): m_val(param1), Base(param1)
+    {
+
+    }
+
+    Child::Child(int param1, Base& base): m_val1(param1), Base(base)
+    {
+
+    }
+    
+    Child::~Child()
+    {
+
+    }
+
+class polymophic
+    override base-class method
+    virtual base-class method
+
+virtual class-method
+    class CTest
+    {
+        public:
+            virtual void show();
+    }
+    
+    void CTest::show()
+    {
+        ///
+    }
+----------------------------------------------
+函数名联编
+    静态联编
+    动态联编(virtual method)
+        虚函数表
+---------------------------------------------- 
+override class-method
+
+    class CBase
+    {
+        public:
+            virtual void show();
+    };
+
+    void CBase::show()
+    {
+        cout << "show base" << endl;
+    }
+
+
+    class  CChild: public CBase
+    {
+        public:
+            virtual void show();
+    };
+
+    void CChild::show()
+    {
+        cout << "show child" << endl;
+    }
+
+    class  CChild1: public CBase
+    {
+        public:
+            virtual void show(int val);
+    };
+
+    void CChild1::show(int val)
+    {
+        CBase::show();
+        cout << "show child1" << endl;
+    }
+----------------------------------------------
+protected
+    
+----------------------------------------------
+ABC abstract-base-class
+
+    class ABC
+    {
+        public:
+            virtual void show() = 0;
+            virtual void display() = 0;
+            virtual void say() ;
+    };
+
+
+    void ABC::display()
+    {
+        cout << "display abc" << endl;
+    }
+
+    void ABC::say()
+    {
+        cout << "say abc" << endl;
+    }
+
+    class ExtendABC : public ABC
+    {
+        virtual void show();
+        virtual void display();
+    };
+
+    void ExtendABC::show()
+    {
+        cout << "show ExtendABC" << endl;
+    }
+
+    void ExtendABC::display()
+    {
+        cout << "display ExtendABC" << endl;
+    }
+
+----------------------------------------------
+class-inhert and dynamic-store
+
+    base-class with dynamic-store, but child-class not 
+        destructor, no-need
+        copy-constructor, no-need 
+        assign-operator, no-need
+
+    base-class with dynamic-store, and child-class too 
+        destructor, need to cleanup chid's portion (use base implicit)
+        copy-constructor, need to alloc chid's portion (use base explicit)
+        assign-operator, need to assign chid's portion (use base explicit)
+----------------------------------------------
+class-inhert
+                        public-inhert   protected-inhert            private-inhert
+implicit-upcasting      yes             yes(only in child-class)    yes(only in child-class)
+----------------------------------------------
+redefine class-auth
+	------------------------------
+	class CBase 
+	{ 
+		public: 
+			virtual void show();
+			void sayHello();
+		private:
+			int m_val;
+	}; 
+
+	class CPrivate: private CBase
+	{
+		public:
+			virtual void show();
+			using CBase::sayHello;
+	};
+	------------------------------
+    CPrivate cprivate;
+    cprivate.sayHello();
+	------------------------------
+----------------------------------------------
+异常处理
+    -------------
+    #include <stdlib.h>
+    abort();
+
+    #include <cstdlib>
+    std::abort()
+
+    ulimit -c 1024 
+    -------------
+    retCode
+    errno
+
+    -------------
+    try
+    {
+        //....
+    }
+    catch (exception& exception)
+    {
+        //...
+    }
+    catch (...)
+    {
+        //default math-exp
+    }
+    //如果没有catch到异常， 则默认调用abort
+    -------------
+    try
+    {
+        int sum = leftVal + rightVal;
+        switch (sum)
+        {
+            case 0:
+                throw bad_base(); break;
+            case 1:
+                throw bad_child_1(); break;
+            case 2:
+                throw bad_child_2(); break;
+            default:
+                throw "unknow exp";
+        }
+    }
+    catch (bad_base& exp)
+    {
+        cout << "catch exp" << endl;
+        exp.display();
+    }
+    catch (...)
+    {
+        cout << "cat unknow exp" << endl;
+    }
+    -------------
+    异常规范
+        c++98引入
+        c++11废弃
+        -------------
+        double test() throw(); //does not throw and exception
+        double test() throw(int); // throw a int kind exception
+    -------------
+    异常特性
+        栈帧解退（类似函数的帧回退）
+        编译器总是创建异常对象的一个临时拷贝
+            通过使用引用类型， 基类可以匹配任何的派生类
+        catch (...)
+            表示匹配任何的throw对象
+    -------------
+    exception 类
+        #include <exception>
+
+        std::exception
+        virtual const char* what();
+        -------------
+        exception
+            |--> logic_error
+                    |--->domain_error
+                    |--->invalid_error
+                    |--->length_error
+                    |--->out_of_bounds
+                    
+            |--> runtime_error
+                    |--->range_error
+                    |--->overflow_error
+                    |--->underflow_error
+            
+            |--> bad_alloc
+                new (std::nothrow) int;
+                    may throw bad_alloc  
+                new  int;
+                    myy return empty ptr
+                
+            |--> user-defined exception
+        -------------
+    -------------
+    exception lost
+        uncaught-exception
+            terminate(); // --> call abort()
+            -------------
+            typedef void (*terminate_handler) ();
+            terminate_handler set_terminate(terminate_handler f) throw(); // c++98
+            terminate_handler set_terminate(terminate_handler f) noexcept; // c++0x
+        -------------
+        unexpected-exception
+            unexpected(); // --> call terminate 
+            -------------
+            typedef void (*unexpected_handler) ();
+            unexpected_handler set_unexpected(unexpected f) throw(); // c++98
+            unexpected_handler set_unexpected(unexpected f) noexcept; // c++0x
+           
+    ------------------------------
+    异常注意事项
+        降低程序运行效率，增加代码量
+        内存分配与异常， 帧回退没有释放内存(用户malloc)
+
+----------------------------------------------
+RTTI(runtime type idenfication)
+    dynamic_cast 
+        -------------
+        ptr convert
+        ChildClass* ptrChildClass = dynamic_cast<ChildClass*> (ptrBaseClass);
+        if (ptrChildClass)
+        {
+            ptrChildClass->childMehtod();
+        }
+        ----------------------------------------------
+        reference convert
+        try
+        {
+            ChildClass& refChildCLass = dynamic_cast<ChildClass&> (refBaseClass);
+        }
+        catch (bad_cast& e)
+        {
+            ....
+        }
+        ------------------------------
+
+    typeid
+        typeid(ClassType);
+        typeid(obj);
+        
+    type_info
+        #include <typenfo>
+        -------------
+        operator==
+        .name()
+----------------------------------------------
