@@ -1510,14 +1510,25 @@ RTTI(runtime type idenfication)
             ....
         }
         ------------------------------
-
+        子类和基类之间必须存在虚函数dynamic_cast编译才ok
+    -------------
     typeid
         typeid(ClassType);
         typeid(obj);
-        
+    -------------
     type_info
         #include <typenfo>
         -------------
         operator==
         .name()
 ----------------------------------------------
+c++ type-convert
+    dynamic_cast <type-name> (expression)
+        from baseClass to ChildClass 
+    const_cast <type-name> (expression)
+        from const to no-const
+    static_cast <type-name> (expression)
+        convert between related-type
+    reinterept_cast <type-name> (expression)
+        force convert
+    
